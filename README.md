@@ -2,14 +2,16 @@
 
 ## Instructions
 
-Fork this repository.  Use C# ([any supported .NET version](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)) and object-oriented design principles to implement the algorithm.  Create the solution using the latest version of Visual Studio.  Notify your point of contact at Brew Ninja that you have completed the task, with a link to your fork.
+Fork this repository.  Use C# ([any supported .NET version](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)) and object-oriented design principles to implement your solution.
 
-- Your solution must have a class library project containing the algorithm - the "production code" - and a unit test project holding the automated tests that sufficiently test the class library.  Avoid using a console application or similar to manually test the algorithm; testing is the responsibility of your automated test suite.  Your production and test code must be executable as-is without additional setup or modifications.
+- A Visual Studio solution is provided for you in the `src` folder.  It contains a class library project `PokerHand` that will contain the models and algorithms - the "production code" - and a unit test project `PokerHandTest` that will hold the automated tests that sufficiently test the class library.  Do not add a console application or similar to manually test the algorithm; testing is the responsibility of your automated test suite.  Your production and test code must be executable as-is without additional setup or modifications.
 - You are encouraged to use [SOLID design principles](https://en.wikipedia.org/wiki/SOLID) and [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design) in your implementation.
-- You are encouraged to use [`xUnit`](https://xunit.net/) and [`FluentAssertions`](https://fluentassertions.com/) to implement your test suite.
+- You are encouraged to use [`xUnit`](https://xunit.net/) and [`FluentAssertions`](https://fluentassertions.com/) to implement your test suite.  Both libraries are already installed in the `PokerHandTest` project.
 - The test scenarios listed near the bottom of this document are necessary but not sufficient to ensure program correctness.  You do not need an exhaustive test suite, but your test cases must be thorough enough for you to be reasonably confident that your implementation is correct.
-- Your submission will be assessed according to its [evolvability](https://smartbear.com/blog/how-code-review-reveals-software-evolvability-issu/) (i.e. how easy it is to extend your submission with new features) and [testability](https://en.wikipedia.org/wiki/Software_testability) (i.e. the quality of your automated test suite).  You will be given comprehensive feedback on your solution regardless of whether or not we choose to proceed with hiring.
+- Your submission will be assessed according to its [evolvability](https://smartbear.com/blog/how-code-review-reveals-software-evolvability-issu/) (i.e. how easy it is to extend your submission with new features) and [testability](https://en.wikipedia.org/wiki/Software_testability) (i.e. the quality of your automated test suite), as well as your familiarity with C# language constructs (such as LINQ).  You will be given comprehensive feedback on your solution regardless of whether or not we choose to proceed with hiring.
 - Aim to spend no more than 60-90 minutes creating your solution.  We value your time!
+
+When you have completed the challenge, notify your point of contact at Brew Ninja with a link to your fork.
 
 ## Requirements
 
