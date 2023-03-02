@@ -33,10 +33,10 @@ When you have completed the challenge, notify your point of contact at Brew Ninj
 4. Your task is to rank pairs of poker hands and to indicate which, if either, has a higher rank.  Examples listed below show pairs of hands dealt to the two players and the corresponding expected result.  Suits are denoted `C`, `D`, `H`, and `S`. Card values are denoted `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `J`, `Q`, `K`, `A`.
 
    - `BLACK: 2H 3D 5S 9C KD  &  WHITE: 2C 3H 4S 8C AH` => `WHITE WINS... high card: Ace`
-   - `BLACK: 2C 2S AH JC 4C  &  WHITE: AH AD 2H 3S 6S` => `WHITE WINS... higher pair (Ace > 2)`
+   - `BLACK: 2C 2S AS JC 4C  &  WHITE: AH AD 2H 3S 6S` => `WHITE WINS... higher pair (Ace > 2)`
    - `BLACK: 2H 4S 4C 3D 4H  &  WHITE: 2S 8S AS QS 3S` => `WHITE WINS... flush`
    - `BLACK: 3C 7C 6C JC 4C  &  WHITE: 2S 8S 4S QS 3S` => `WHITE WINS... higher flush (Queen > Jack)`
-   - `BLACK: 2H 3D 5S 9C KD  &  WHITE: 2C 3H 4S 8C KH` => `BLACK WINS... high card: 9`
+   - `BLACK: 2H 3D 5S 9C KD  &  WHITE: 2C 3H 4S 8C KH` => `BLACK WINS... high card: 9 (both hands have K, so next the highest card is evaluated)`
    - `BLACK: 2H 3D 5S 9C KD  &  WHITE: 2D 3H 5C 9S KH` => `TIE`
 
     Please note that the above should not be treated as console input and output.  They are merely examples for illustrative purposes.
