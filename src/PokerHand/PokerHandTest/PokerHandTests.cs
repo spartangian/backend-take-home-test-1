@@ -73,7 +73,7 @@ namespace PokerHandTest
             var players = new List<Player> { white,black };
 
             var sut = new PokerHandEvaluator();
-            var winner = sut.EvaluateHighCard(players);
+            var winner = sut.EvaluateCards(players);
 
             winner.Should().Be($"{white.Name} wins. High card: AH");
 
@@ -109,7 +109,7 @@ namespace PokerHandTest
             var players = new List<Player> { white, black };
 
             var sut = new PokerHandEvaluator();
-            var winner = sut.EvaluateHighCard(players);
+            var winner = sut.EvaluateCards(players);
 
             winner.Should().Be($"{black.Name} wins. High card: 9H");
         }

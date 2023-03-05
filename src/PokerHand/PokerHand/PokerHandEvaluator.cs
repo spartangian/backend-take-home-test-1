@@ -56,7 +56,7 @@ namespace PokerHand
             return "";
         }
 
-        public string EvaluateHighCard(List<Player> players)
+        private string EvaluateHighCard(List<Player> players)
         {
             var playerAndDeckInOrder = new Dictionary<Stack<Card>, Player>();
             var dictBySymbol = new Dictionary<string, Player>();
@@ -99,7 +99,7 @@ namespace PokerHand
             return $"{winner.Name} wins. High card: {test.First().Value}";
         }
 
-        public string EvaluateTwoPair(List<Player> players)
+        private string EvaluateTwoPair(List<Player> players)
         {
             var twoPair = new Dictionary<int, Player>();
 
