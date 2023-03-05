@@ -15,12 +15,5 @@ namespace PokerHand
 
         public string Name { get; set; }
         public List<Card> Deck { get; set; }
-        public string PlayerHand { get; set; }
-        public int GetScore()
-        {
-            int score = 0;
-            Deck.ForEach(x => score += x.TotalValue);
-            return score;
-        }
     }
 }
