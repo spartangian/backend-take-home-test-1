@@ -67,8 +67,8 @@ namespace PokerHand
             foreach (var player in players)
             {
                 //put the player's deck in order
-                var cardsDescendingOrder = player.Deck.Select(x => x).OrderBy(x => x.Rank);
-                var cardStack = new Stack<Card>(cardsDescendingOrder);
+                var cardsInOrder = player.Deck.Select(x => x).OrderBy(x => x.Rank);
+                var cardStack = new Stack<Card>(cardsInOrder);
 
                 foreach (var c in cardStack)
                 {
@@ -92,11 +92,10 @@ namespace PokerHand
                 previousPlayer = player;
             }
 
-            var test = dictByRank.OrderByDescending(x => x.Key);
+            var winnerKey = dictByRank.OrderByDescending(x => x.Key);
+            var winner = dictBySymbol[winnerKey.First().Value];
 
-            var winner = dictBySymbol[test.First().Value];
-
-            return $"{winner.Name} wins. High card: {test.First().Value}";
+            return $"{winner.Name} wins. High card: {winnerKey.First().Value}";
         }
 
         private string EvaluateTwoPair(List<Player> players)

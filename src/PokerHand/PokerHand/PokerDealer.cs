@@ -33,18 +33,32 @@ namespace PokerHand
 
         public List<Card> Deal()
         {
-            var rnd = new Random();
             var playerDeck = new List<Card>();
+            var shuffledCards = Shuffle();
             
             for(int i = 0; i < 5; i++)
             {
-                int pick = rnd.Next(_deck.Count);
-                playerDeck.Add(_deck[pick]);
-
-                _deck.RemoveAt(pick);
+                playerDeck.Add(shuffledCards.Dequeue());
             }
 
             return playerDeck;
+        }
+
+        private Queue<Card> Shuffle()
+        {
+            var rnd = new Random(DateTime.Now.Millisecond);
+            var shuffledCards = _deck;
+
+            for(int i = shuffledCards.Count - 1; i > 0; i--)
+            {
+                int j = rnd.Next(i + 1);
+                Card card = shuffledCards[i];
+                shuffledCards[i] = shuffledCards[j];
+                shuffledCards[j] = card;
+            }
+
+            var finalShuffledCards = new Queue<Card>(shuffledCards);
+            return finalShuffledCards;
         }
 
         private void AssignRanksValue()
