@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace PokerHand
@@ -62,13 +60,13 @@ namespace PokerHand
             var dictBySymbol = new Dictionary<string, Player>();
             var dictByRank = new Dictionary<int, string>();
             var previousPlayerDeck = new Stack<Card>();
-            var previousPlayer = new Player();
 
             foreach (var player in players)
             {
                 //put the player's deck in order
                 var cardsInOrder = player.Deck.Select(x => x).OrderBy(x => x.Rank);
                 var cardStack = new Stack<Card>(cardsInOrder);
+                var previousPlayer = player;
 
                 foreach (var c in cardStack)
                 {
@@ -89,7 +87,6 @@ namespace PokerHand
                 }
 
                 previousPlayerDeck = cardStack;
-                previousPlayer = player;
             }
 
             var winnerKey = dictByRank.OrderByDescending(x => x.Key);
@@ -159,8 +156,6 @@ namespace PokerHand
         {
             var flushes = new Dictionary<string, Player>();
             var flushesByRank = new Dictionary<int, string>();
-            var loser = new Player();
-            var winner = new Player();
             string loserKey = "";
             string winnerKey = "";
 
@@ -183,16 +178,16 @@ namespace PokerHand
             if(flushes.Count() > 1)
             {
                 loserKey = flushesByRank.Min(x => x.Value);
-                loser = flushes[loserKey];
+                var loser = flushes[loserKey];
                 winnerKey = flushesByRank.Max(x => x.Value);
-                winner = flushes[winnerKey];
+                var winner = flushes[winnerKey];
 
                 return $"{winner.Name} wins... higher flush ({winnerKey} > {loserKey})";
             }
             else if(flushes.Count() == 1)
             {
                 winnerKey = flushesByRank.Max(x => x.Value);
-                winner = flushes[winnerKey];
+                var winner = flushes[winnerKey];
 
                 return $"{winner.Name} wins... flush";
             }

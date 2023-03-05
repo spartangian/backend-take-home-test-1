@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
+﻿using System.Collections.Generic;
+using PokerHand.Characters;
 
 namespace PokerHand
 {
-    public class Player
+    public class Player : Character
     {
-        public Player() { }
-        public Player(string name)
+        public Player(string name) : base(name)
         {
             Name = name;
         }
